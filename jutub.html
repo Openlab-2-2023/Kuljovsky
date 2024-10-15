@@ -1,11 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jutub</title>
-</head>
-<body>
+    <title>YouTube</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #000000, #000000);
+            color: #fafafa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-left: 60px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            height: 50px;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            width: 100px;
+        }
+
+        .header-center {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-center input {
+            padding: 10px;
+            width: 500px;
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 0 2px 2px 0;
+            font-weight: bold;
+            border-color: #000000;
+            box-shadow: inset 1px 2px 5px;
+        }
+
+        .search-btn {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            border-style: solid;
+            border-color: #000000;
+            box-shadow: inset 1px 2px 5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-right button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .header-right button img {
+            width: 30px;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .video-item {
+            background-color: #000000;
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+
+        .video-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .video-item h3 {
+            margin-top: 12px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .video-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .video-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .header-center input {
+                width: 300px;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-item {
+                flex: 1 1 100%;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-center {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .header-center input {
+                width: 100%;
+            }
+        }
+
+        .search-icon {
+            height: 10px;
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .sidebar {
+            background-color: white;
+            color: white;
+            position: fixed;
+            left: 0px;
+            bottom: 0;
+            top: 50px;
+            width: 60px;
+        }
+        .sidebar-icon {
+           width: 50px;
+           height: 50px; 
+        }
+        .hamburger-menu {
+            width: 40px!important;
+            height: 40px;
+        }
+        .thumbnail 
+        {
+            width: 400px;
+            height: 250px;
+        }
+    </style>
     
+</head>
+
+<body>
+    <div class="sidebar">
+        <img class="sidebar-icon" src="appslabik/Marcel-Kuljovsky---intro/docs/icons/dom.png">
+        <img class="sidebar-icon" src="appslabik/Marcel-Kuljovsky---intro/docs/icons/shorts.png">
+        <img class="sidebar-icon" src="appslabik/Marcel-Kuljovsky---intro/docs/icons/odberi.png">
+        <img class="sidebar-icon" src="appslabik/Marcel-Kuljovsky---intro/docs/icons/Mein.png">
+        <img class="sidebar-icon" src="appslabik/Marcel-Kuljovsky---intro/docs/icons/history.png">
+    </div>
+    <header>
+        <div class="header-left">
+            <div style = "padding-left: 15px ;"></div>
+            <img class="hamburger-menu"src="appslabik/Marcel-Kuljovsky---intro/docs/icons/hamburger-menu.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube logo">
+        </div>
+
+        <div class="header-center">
+            <input type="text" placeholder="Hľadať...">
+            <button class="search-btn">
+                <img class="search-icon" src="icons/search.svg" alt="">
+            </button>
+        </div>
+
+        <div class="header-right">
+            <button><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Profile Icon"></button>
+            <button><img src="https://cdn-icons-png.flaticon.com/512/1827/1827379.png" alt="Notifications"></button>
+            <button><img src="https://cdn-icons-png.flaticon.com/512/84/84380.png" alt="More options"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="video-grid">
+            <div class="video-item">
+
+                <img class="thumbnail" src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/mato.jfif" alt="Recast">
+                <h3>Martin Bulica @2SekundovyMato - RECAST</h3>
+                <p>Duklock • 3.53 mil. views • 1 year ago</p>
+            </div>
+            <div class="video-item">
+                <img class="thumbnail"src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/ježino.jfif" alt="kratos">
+                <h3>KRATOS VS JEŽÍŠ!</h3>
+                <p>Vidrail • 41 tis views • 1 months ago</p>
+            </div>
+            <div class="video-item">
+                <img class="thumbnail"src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/kolseo.jpg" alt="zazrak">
+                <h3>Zázrak do **č*</h3>
+                <p>MIMOKLEZ • 18k views • 11 years ago</p>
+            </div>
+            <div class="video-item">
+                <img class="thumbnail"src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/riddl.jfif" alt="Linhai">
+                <h3>The Batman: Does Riddler Actually KNOW Batman = Bruce?</h3>
+                <p>New Rockstars • 50 mil. views • 2 years ago</p>
+            </div>
+            <div class="video-item">
+                <img class="thumbnail"src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/keptn.jfif" alt="Captain">
+                <h3>Captain America: Brave New World | Official Teaser | In Theaters February 14, 2025</h3>
+                <p>Marvel Entertainment • 20 mil. views • 3 months ago</p>
+            </div>
+            <div class="video-item">
+                <img class="thumbnail"src="appslabik/Marcel-Kuljovsky---intro/docs/obrazky/stiahnuť.jfif" alt="spojka">
+                <h3>100 hours of shreksophone </h3>
+                <p>Shreksophone • 69.420 mil. views • 5 years ago</p>
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
